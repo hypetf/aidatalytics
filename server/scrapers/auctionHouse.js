@@ -1,6 +1,6 @@
 const { chromium } = require('playwright');
 const fetchEPCData = require('../utils/fetchEPCData');
-// const { insertBulkAuctions } = require('../db/insertBulkAuctions');
+const { insertBulkAuctions } = require('../db/insertBulkAuctions');
 
 const scrapeAuctionHouse = async (db_client) => {
   const browser = await chromium.launch();
@@ -71,7 +71,7 @@ const scrapeAuctionHouse = async (db_client) => {
       };
     }));
 
-    // await insertBulkAuctions(db_client, cleanedData);
+    await insertBulkAuctions(db_client, cleanedData);
     return { success: true, data: cleanedData };
 
   } catch (err) {

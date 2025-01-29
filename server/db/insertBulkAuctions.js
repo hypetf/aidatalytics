@@ -3,7 +3,7 @@ const { MongoClient } = require("mongodb");
 async function insertBulkAuctions(db_client, auctions) {
   console.log(`${auctions.length} auctions scraped`);
   try {
-    const db = db_client.db('propertypulse');
+    const db = db_client.db('listings');
     const collection = db.collection('AuctionHouse');
 
     const existingLinks = await collection

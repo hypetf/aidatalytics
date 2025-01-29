@@ -8,7 +8,7 @@ const { scrapeAuctionHouse } = require('./scrapers/auctionHouse')
 const { scrapePughAuctions } = require('./scrapers/pughAuctions')
 const Auction = require('./db/models/Auction');
 const fetchEPCData = require('./utils/fetchEPCData');
-const mongoURI = `mongodb+srv://rabbanikhan2001:${process.env.MONGODB_PW}@propertypulse.sb5xc.mongodb.net/`
+const mongoURI = `mongodb+srv://rabbanikhan2001:${process.env.MONGODB_PW}@listings.pabv9.mongodb.net/?retryWrites=true&w=majority&appName=listings`
 const PORT = process.env.PORT || 3001;
 
 const db_client = new MongoClient(mongoURI, {
